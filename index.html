@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MusicMenu - Manage your music services in one place. Switch easily between YouTube Music, Spotify, and Apple Music.">
+    <title>MusicMenu | Your Music Control Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>MusicMenu</h1>
+            <p>Your Music Control Center for macOS</p>
+            <a href="#download" class="btn primary-btn">Download Now</a>
+        </div>
+    </header>
+
+    <section id="screenshots">
+        <div class="container">
+            <h2>Screenshots</h2>
+            <div class="slider">
+                <div class="slides">
+                    <!-- Each "slide" will contain an image of the app -->
+                    <div class="slide">
+                        <img src="images/screenshot1.png" alt="Screenshot 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/screenshot2.png" alt="Screenshot 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/screenshot3.png" alt="Screenshot 3">
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Arrows for navigation -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Unified Control</h3>
+                    <p>Manage YouTube Music, Spotify, and Apple Music from your Mac's status bar.</p>
+                </div>
+                <div class="feature">
+                    <h3>Instant Switching</h3>
+                    <p>Quickly switch between music services without opening separate apps.</p>
+                </div>
+                <div class="feature">
+                    <h3>Custom Keyboard Shortcuts</h3>
+                    <p>Use customizable keyboard shortcuts to toggle the music panel on and off.</p>
+                </div>
+                <div class="feature">
+                    <h3>Resizable Panel</h3>
+                    <p>Adjust the panel to your preferred size for a seamless experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+        <div class="container">
+            <h2>Download MusicMenu</h2>
+            <p>Get the latest version of MusicMenu for macOS and enjoy hassle-free music control.</p>
+            <a href="path-to-your-download-link" class="btn primary-btn">Download for macOS</a>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support">
+        <div class="container">
+            <h2>Support</h2>
+            <p>Having trouble? We're here to help.</p>
+            <ul>
+                <li>Email us at <a href="mailto:support@motorama.app">support@motorama.app</a></li>
+                <li>Check our <a href="faq.html">FAQ</a> for common questions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MusicMenu. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(n) {
+        slideIndex += n;
+        if (slideIndex >= slides.length) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = slides.length - 1;
+        showSlides(slideIndex);
+    }
+
+    function showSlides(n) {
+        slides.forEach((slide, index) => {
+            slide.style.display = index === n ? 'block' : 'none';
+        });
+    }
+
+    // Auto slideshow
+    setInterval(() => {
+        changeSlide(1);
+    }, 4000);
+
+    // Initial display
+    showSlides(slideIndex);
+</script>
+</html>
